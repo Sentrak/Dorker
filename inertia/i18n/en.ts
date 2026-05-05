@@ -85,6 +85,18 @@ export const en: Translations = {
       { title: 'Privacy', desc: "Even if information is technically accessible, respect the privacy of the people involved." },
     ],
   },
+  seo: {
+    home: {
+      title: 'Dorker — OSINT Google Dork Generator',
+      description:
+        'Generate 700+ targeted Google Dork queries for any domain. A free OSINT reconnaissance tool for security professionals and bug bounty hunters.',
+    },
+    learn: {
+      title: 'OSINT Guide · Dorker',
+      description:
+        'Master Google Dorking operators and best practices for OSINT reconnaissance. A complete reference guide for security professionals.',
+    },
+  },
   footer: {
     description:
       "OSINT reconnaissance engine. Generates custom Google Dork queries for security professionals.",

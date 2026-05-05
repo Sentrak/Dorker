@@ -1,4 +1,5 @@
 import { useState, useRef, type KeyboardEvent } from 'react'
+import { Head } from '@inertiajs/react'
 import { Search, Copy, ExternalLink, Check, Download } from 'lucide-react'
 import { toast } from 'sonner'
 import { DORK_CATEGORIES, TOTAL_DORKS, type DorkCategory } from '~/data/dorks'
@@ -169,6 +170,20 @@ export default function Home() {
   }
 
   return (
+    <>
+    <Head>
+      <title>{t.seo.home.title}</title>
+      <meta name="description" content={t.seo.home.description} />
+      <meta property="og:title" content={t.seo.home.title} />
+      <meta property="og:description" content={t.seo.home.description} />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://dorker.sentrak.info/" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={t.seo.home.title} />
+      <meta name="twitter:description" content={t.seo.home.description} />
+      <meta name="robots" content="index, follow" />
+      <link rel="canonical" href="https://dorker.sentrak.info/" />
+    </Head>
     <div className="pt-16">
       {/* ── Top bar ── */}
       <div className="sticky top-16 z-30 bg-bg-dark/95 backdrop-blur-xl border-b border-edge">
@@ -263,5 +278,6 @@ export default function Home() {
         />
       </div>
     </div>
+    </>
   )
 }

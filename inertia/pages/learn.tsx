@@ -1,4 +1,5 @@
 import { useEffect, useRef, type RefObject } from 'react'
+import { Head } from '@inertiajs/react'
 import { BookOpen, AlertTriangle, CheckCircle, Terminal, Search, Shield, Scale } from 'lucide-react'
 import { useLanguage } from '~/context/language'
 
@@ -25,6 +26,20 @@ export default function Learn() {
   const { t } = useLanguage()
 
   return (
+    <>
+    <Head>
+      <title>{t.seo.learn.title}</title>
+      <meta name="description" content={t.seo.learn.description} />
+      <meta property="og:title" content={t.seo.learn.title} />
+      <meta property="og:description" content={t.seo.learn.description} />
+      <meta property="og:type" content="article" />
+      <meta property="og:url" content="https://dorker.sentrak.info/learn" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={t.seo.learn.title} />
+      <meta name="twitter:description" content={t.seo.learn.description} />
+      <meta name="robots" content="index, follow" />
+      <link rel="canonical" href="https://dorker.sentrak.info/learn" />
+    </Head>
     <div className="pt-16">
       {/* ── Header ── */}
       <section className="pt-14 pb-10 border-b border-edge">
@@ -158,5 +173,6 @@ export default function Learn() {
         </div>
       </section>
     </div>
+    </>
   )
 }

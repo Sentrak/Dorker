@@ -50,6 +50,10 @@ export interface Translations {
     operators: { op: string; example: string; desc: string }[]
     decomp: { op: string; desc: string }[]
   }
+  seo: {
+    home: { title: string; description: string }
+    learn: { title: string; description: string }
+  }
   footer: {
     description: string
     columns: {

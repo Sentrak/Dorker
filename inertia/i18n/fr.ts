@@ -86,6 +86,18 @@ export const fr: Translations = {
       { title: 'Vie privée', desc: "Même si des informations sont accessibles, respectez la vie privée des personnes concernées." },
     ],
   },
+  seo: {
+    home: {
+      title: 'Dorker — Générateur de Google Dorks OSINT',
+      description:
+        'Générez plus de 700 requêtes Google Dork ciblées pour n\'importe quel domaine. Un outil OSINT gratuit pour les professionnels de la sécurité et les bug bounty hunters.',
+    },
+    learn: {
+      title: 'Guide OSINT · Dorker',
+      description:
+        'Maîtrisez les opérateurs Google Dorking et les bonnes pratiques de reconnaissance OSINT. Un guide de référence complet pour les professionnels de la sécurité.',
+    },
+  },
   footer: {
     description:
       "Moteur de reconnaissance OSINT. Génère des requêtes Google Dork personnalisées pour les professionnels de la sécurité.",
