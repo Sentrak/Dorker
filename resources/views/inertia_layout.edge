@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title inertia>Dorker</title>
+
+    <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    @viteReactRefresh()
+    @vite(['inertia/app.tsx'])
+    @inertiaHead()
+    @stack('dumper')
+  </head>
+
+  <body>
+    @inertia()
+  </body>
+</html>

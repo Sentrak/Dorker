@@ -1,0 +1,88 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Space Mono', ui-monospace, monospace;
+
+  /* Brand – cyan/blue cyberpunk */
+  --color-blue-brand: #00d4ff;
+  --color-blue-dim: #0099bf;
+
+  /* Dark surfaces – blue-tinted */
+  --color-bg-dark: #080c14;
+  --color-bg-secondary: #0c1220;
+  --color-bg-card: #111c2e;
+  --color-bg-card-hover: #162336;
+
+  /* Text */
+  --color-cream: #e8eef8;
+  --color-dim: #7a8ba8;
+  --color-mute: #3d4f6a;
+
+  /* Borders */
+  --color-edge: #1a2840;
+  --color-edge-hover: #253650;
+}
+
+@layer base {
+  html,
+  body {
+    height: 100%;
+    -webkit-font-smoothing: antialiased;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  a { color: inherit; text-decoration: none; }
+  [x-cloak] { display: none; }
+}
+
+@layer components {
+  /* ── Noise overlay ── */
+  .noise-overlay::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* ── Custom scrollbar ── */
+  .dark-scroll::-webkit-scrollbar { width: 5px; }
+  .dark-scroll::-webkit-scrollbar-track { background: #080c14; }
+  .dark-scroll::-webkit-scrollbar-thumb { background: #1a2840; border-radius: 3px; }
+  .dark-scroll::-webkit-scrollbar-thumb:hover { background: #00d4ff; }
+
+  /* ── Scroll-triggered fade-up ── */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── Terminal cursor ── */
+  .terminal-cursor {
+    display: inline-block;
+    width: 7px;
+    height: 1em;
+    background: #00d4ff;
+    opacity: 0.7;
+    vertical-align: text-bottom;
+    margin-left: 2px;
+    animation: cursor-blink 1.1s step-end infinite;
+  }
+
+  section[id] { scroll-margin-top: 80px; }
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 0; }
+}
+@keyframes scale-up {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
