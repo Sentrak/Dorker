@@ -4,6 +4,10 @@ build
 tmp/*
 !tmp/.gitkeep
 
+# AdonisJS generated files
+.adonisjs/client/registry/
+.adonisjs/server/
+
 # Secrets
 .env
 .env.local
