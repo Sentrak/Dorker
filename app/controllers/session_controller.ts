@@ -11,11 +11,11 @@ export default class SessionController {
     const user = await User.verifyCredentials(email, password)
 
     await auth.use('web').login(user)
-    response.redirect().toRoute('home')
+    response.redirect('/')
   }
 
   async destroy({ auth, response }: HttpContext) {
     await auth.use('web').logout()
-    response.redirect().toRoute('session.create')
+    response.redirect('/login')
   }
 }
