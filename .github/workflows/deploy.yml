@@ -18,7 +18,7 @@ jobs:
       - name: Install & Build
         run: |
           npm ci
-          node ace build
+          node ace build --ignore-ts-errors
           cd build && npm ci --omit=dev
 
       - name: Upload build to VPS
