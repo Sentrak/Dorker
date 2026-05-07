@@ -4,6 +4,7 @@ import { Search, Copy, ExternalLink, Check, Download } from 'lucide-react'
 import { toast } from 'sonner'
 import { DORK_CATEGORIES, TOTAL_DORKS, type DorkCategory } from '~/data/dorks'
 import { useLanguage } from '~/context/language'
+import DorkHighlight from '~/components/DorkHighlight'
 
 function resolveDork(template: string, domain: string): string {
   return template.replace(/DOMAIN/g, domain)
@@ -39,8 +40,8 @@ function DorkRow({
 
   return (
     <div className="flex items-center gap-3 px-4 py-2.5 border-b border-edge/30 last:border-0 hover:bg-blue-brand/[0.04] transition-colors group">
-      <span className="flex-1 font-mono text-xs leading-relaxed break-all text-cream/75 group-hover:text-cream transition-colors">
-        {dork}
+      <span className="flex-1 font-mono text-xs leading-relaxed break-all">
+        <DorkHighlight dork={dork} domain={isDomainSet ? displayDomain : ''} />
       </span>
       <div className="flex items-center gap-1.5 flex-shrink-0">
         <button

@@ -280,7 +280,17 @@ export default function AppLayout({ children }: { children: ReactNode }) {
           {/* Bottom bar */}
           <div className="mt-12 pt-6 border-t border-edge flex flex-wrap justify-between items-center gap-3 text-[12px] text-mute">
             <span>{t.footer.copyright}</span>
-            <span>{t.footer.tagline}</span>
+            <span>
+              {t.footer.tagline}{' '}·{' '}Built by{' '}
+              <a
+                href="https://sentrak.info"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-cream transition-colors"
+              >
+                sentrak.info
+              </a>
+            </span>
           </div>
         </div>
       </footer>

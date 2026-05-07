@@ -1,5 +1,6 @@
 import { ArrowRight } from 'lucide-react'
 import { type DorkState, defaultDorkState, buildDorkQuery } from './DorkBuilder'
+import DorkHighlight from './DorkHighlight'
 
 export interface DorkPreset {
   id: string
@@ -27,8 +28,8 @@ export default function DorkCard({ preset, onSelect }: Props) {
         {preset.title}
       </h4>
       <p className="text-xs text-mute mb-3.5 leading-relaxed">{preset.description}</p>
-      <div className="font-mono text-xs text-amber-brand/70 bg-bg-secondary rounded-lg px-3 py-2 truncate border border-edge/50 mb-3">
-        {dork}
+      <div className="font-mono text-xs bg-bg-secondary rounded-lg px-3 py-2 truncate border border-edge/50 mb-3">
+        <DorkHighlight dork={dork} style={{ opacity: 0.85 }} />
       </div>
       <div className="flex items-center gap-1 text-xs text-dim group-hover:text-amber-brand transition-colors">
         <span>Charger dans le générateur</span>

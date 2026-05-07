@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Copy, ExternalLink, X, ChevronDown, RotateCcw } from 'lucide-react'
 import { toast } from 'sonner'
+import DorkHighlight from './DorkHighlight'
 
 export interface DorkState {
   query: string
@@ -191,7 +192,7 @@ export default function DorkBuilder({ state, onChange }: Props) {
         </div>
         <div className="px-5 py-5 min-h-[68px] font-mono text-sm leading-relaxed break-all">
           {dork ? (
-            <span className="text-amber-brand">{dork}</span>
+            <DorkHighlight dork={dork} />
           ) : (
             <span className="text-mute">
               Votre requête Google Dork apparaîtra ici...
