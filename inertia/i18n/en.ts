@@ -87,7 +87,7 @@ export const en: Translations = {
   },
   seo: {
     home: {
-      title: 'Dorker — OSINT Google Dork Generator',
+      title: 'Dorker OSINT Google Dork Generator',
       description:
         'Generate 700+ targeted Google Dork queries for any domain. A free OSINT reconnaissance tool for security professionals and bug bounty hunters.',
     },
