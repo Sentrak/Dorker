@@ -17,11 +17,10 @@ export default defineConfig({
    * your frontend code
    */
   resolve: {
-    alias: [
-      { find: '~/', replacement: `${import.meta.dirname}/inertia/` },
-      { find: '@generated/registry', replacement: `${import.meta.dirname}/.adonisjs/client/registry/index.ts` },
-      { find: '@generated', replacement: `${import.meta.dirname}/.adonisjs/client` },
-    ],
+    alias: {
+      '~/': `${import.meta.dirname}/inertia/`,
+      '@generated': `${import.meta.dirname}/.adonisjs/client`,
+    },
   },
 
   server: {

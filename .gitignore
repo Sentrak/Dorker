@@ -4,8 +4,8 @@ build
 tmp/*
 !tmp/.gitkeep
 
-# AdonisJS generated files
-.adonisjs/
+# AdonisJS generated files (server-side only, client is committed)
+.adonisjs/server/
 
 # Secrets
 .env
