@@ -40,4 +40,6 @@ jobs:
           port: 52200
           script: |
             cp /var/www/dorker/.env /var/www/dorker/build/.env
+            mkdir -p /var/www/dorker/build/tmp
+            cd /var/www/dorker/build && node ace migration:run --force
             pm2 restart dorker --update-env
